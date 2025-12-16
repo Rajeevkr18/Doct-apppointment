@@ -134,6 +134,5 @@ LinkedIn: [https://www.linkedin.com/in/rajeevk18/](https://www.linkedin.com/in/r
 * Implemented role-based access and secure data handling
 * Containerized the application using Docker
 * Automated end-to-end deployment using Ansible
-
-```
+ 
 
