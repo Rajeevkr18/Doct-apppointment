@@ -32,24 +32,6 @@ This application enables patients to book and manage appointments with doctors, 
 
 ---
 
-## 📂 Project Structure
-
-```
-
-Doct-apppointment/
-├── client/            # React frontend
-├── backend/           # Express backend
-├── ansible/           # Ansible automation (playbooks & roles)
-├── server.js          # Application entry point
-├── docker-compose.yml
-├── Dockerfile
-├── .gitignore
-└── README.md
-
-````
-
----
-
 ## ⚙️ Environment Setup
 
 Create a `.env` file in the backend or root directory:
