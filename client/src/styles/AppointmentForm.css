@@ -1,0 +1,28 @@
+/* Full-page appointment form styles inspired by the provided mock */
+.appointment-page{min-height:calc(100vh - 48px);display:flex;align-items:center;justify-content:center;padding:48px 24px;background:linear-gradient(180deg, rgba(4,48,99,0.03), transparent 30%), var(--bg);}
+.appointment-form{width:980px;max-width:calc(100% - 48px);padding:28px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,248,251,0.98));backdrop-filter:blur(2px);color:var(--text);border:1px solid rgba(2,62,138,0.06)}
+.form-title-center{text-align:center;font-weight:800;letter-spacing:2px;margin-bottom:18px}
+.af-form{display:block}
+.af-grid{display:flex;gap:22px}
+.af-col{flex:1;display:flex;flex-direction:column}
+.af-col label{font-weight:600;color:var(--muted);margin-bottom:6px}
+.af-col input{background:transparent;border:1px solid rgba(2,62,138,0.08);color:var(--text);padding:10px 12px;border-radius:8px}
+.af-col input:focus{box-shadow:0 8px 20px rgba(0,168,204,0.08);border-color:var(--accent-1)}
+.af-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+.af-submit-row{display:flex;align-items:center;justify-content:flex-end;margin-top:16px}
+
+.af-bottom{display:flex;gap:22px;margin-top:22px}
+.af-bottom-col{flex:1}
+.af-section-title{font-weight:700;color:var(--text);margin-bottom:8px}
+.af-radio{display:block;color:var(--muted);margin:6px 0}
+.required{color:#2ecc71;margin-left:4px}
+
+.af-footer{text-align:center;margin-top:18px;color:var(--muted);font-size:0.9rem}
+
+/* small screens */
+@media (max-width:920px){
+  .appointment-form{width:100%;padding:20px}
+  .af-grid{flex-direction:column}
+  .af-bottom{flex-direction:column}
+  .af-submit-row{justify-content:center}
+}

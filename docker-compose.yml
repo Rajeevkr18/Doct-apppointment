@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    container_name: doctor_backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    networks:
+      - doctor_network
+
+  frontend:
+    build: ./client
+    container_name: doctor_frontend
+    ports:
+      - "3000:80"    
+    environment:
+      - REACT_APP_API_URL=http://backend:8080
+    depends_on:
+      - backend
+    networks:
+      - doctor_network
+
+networks:
+  doctor_network:
+    driver: bridge

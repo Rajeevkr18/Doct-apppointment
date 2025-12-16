@@ -1,0 +1,11 @@
+/* App-level page helpers */
+.page-hero{padding:28px;border-radius:14px;margin:8px 0;text-align:center;background:linear-gradient(90deg, rgba(108,99,255,0.10), rgba(0,194,255,0.04));box-shadow:0 10px 30px rgba(2,6,23,0.35)}
+.page-hero h1{margin:0;color:var(--text);font-size:1.8rem}
+.page-hero p{margin-top:8px;color:var(--muted);max-width:900px;margin-left:auto;margin-right:auto}
+.section{margin-top:22px}
+.card.m-2{padding:18px;margin:10px;border-radius:14px;width:320px}
+.card .card-header{font-weight:800;margin-bottom:8px}
+.card .card-body p{margin:6px 0;color:var(--muted)}
+
+/* small utility for centered sections */
+.center-row{display:flex;align-items:center;justify-content:center;gap:12px}

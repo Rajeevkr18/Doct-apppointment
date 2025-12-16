@@ -1,0 +1,58 @@
+---
+- name: Stop running containers
+  shell: |
+    cd {{ project_dir }}
+    docker compose down
+  ignore_errors: yes
+ 
+- name: Check for source or Dockerfile changes
+  shell: |
+    cd {{ project_dir }}
+    find . -type f \( -name "Dockerfile" -o -name "*.json" -o -name "*.js" -o -name "*.yml" -o -name "*.env" \) \
+      -exec stat --format '%n %Y %y' {} \; | md5sum
+  register: current_hash
+
+- name: Load previous hash      
+  stat:
+    path: /tmp/doctor_app_last_hash.txt
+  register: hash_file
+
+- name: Read previous hash
+  command: cat /tmp/doctor_app_last_hash.txt
+  register: previous_hash
+  when: hash_file.stat.exists
+  ignore_errors: true
+
+- name: Determine if rebuild is needed
+  set_fact:
+    rebuild_needed: "{{ (not hash_file.stat.exists) or (current_hash.stdout != previous_hash.stdout) | bool }}"
+
+- debug:
+    msg:
+      - "Rebuild triggered: {{ rebuild_needed }}"
+      - "Current hash: {{ current_hash.stdout }}"
+      - "Previous hash: {{ previous_hash.stdout | default('N/A') }}"
+
+- name: Save current hash
+  copy:
+    content: "{{ current_hash.stdout }}"
+    dest: /tmp/doctor_app_last_hash.txt
+ 
+- name: Start containers (cached)
+  shell: |
+    cd {{ project_dir }}
+    docker compose up -d
+  when: not rebuild_needed
+
+- name: Start containers (force rebuild)
+  shell: |
+    cd {{ project_dir }}
+    docker compose up -d --build
+  when: rebuild_needed
+
+- name: Verify running containers
+  shell: docker ps
+  register: docker_output
+
+- debug:
+    msg: "{{ docker_output.stdout_lines }}"

@@ -1,0 +1,12 @@
+---
+- name: Deploy Doctor Appointment Containers (Local)
+  hosts: doctor_app_servers
+  become: yes
+  vars:
+    project_dir: "{{ playbook_dir }}/.."   
+  tasks:
+    - name: Install Docker (skip if already installed)
+      include_tasks: tasks/install_docker.yml
+
+    - name: Deploy containers with Docker Compose
+      include_tasks: tasks/deploy_containers.yml      

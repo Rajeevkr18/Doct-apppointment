@@ -1,0 +1,18 @@
+.container{padding:24px}
+.user-profile .profile-card{display:flex;gap:22px;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,249,251,0.98));border-radius:12px;padding:22px;box-shadow:var(--shadow);align-items:center;max-width:980px;margin:24px auto;border:1px solid rgba(2,62,138,0.06)}
+.profile-left{width:220px;text-align:center;padding:8px}
+.avatar{width:120px;height:120px;background:var(--accent-gradient);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;margin:0 auto 12px;box-shadow:0 18px 44px rgba(2,62,138,0.08)}
+.name{margin:8px 0 4px;font-size:20px}
+.role{color:var(--muted);font-size:14px}
+.profile-right{flex:1;padding:8px}
+.profile-right h3{margin:0 0 12px}
+.details{background:transparent;border-radius:10px;padding:18px;border:1px solid rgba(255,255,255,0.04)}
+.detail-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,0.03);align-items:center}
+.detail-row:last-child{border-bottom:none}
+.label{color:var(--muted)}
+.value{font-weight:700;color:var(--text)}
+.actions{display:flex;gap:12px;margin-top:18px}
+.btn{padding:10px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+.btn-primary{background:var(--accent-gradient);color:var(--text);box-shadow:0 10px 26px rgba(108,99,255,0.12)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+@media (max-width:700px){.user-profile .profile-card{flex-direction:column;align-items:stretch}.profile-left{width:100%}.avatar{width:96px;height:96px;font-size:32px}}

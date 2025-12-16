@@ -1,0 +1,68 @@
+/* Theme overrides and extra polish */
+
+/* Ant Design overrides */
+.ant-btn-primary {
+  background: var(--accent-gradient) !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(108,99,255,0.12) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  height: 40px !important;
+  padding: 0 18px !important;
+}
+
+.ant-btn {
+  border-radius: 10px !important;
+  height: 40px !important;
+}
+
+.ant-input,
+.ant-select-selector,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  background: rgba(255,255,255,0.02) !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+  color: var(--text) !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+}
+
+/* Card lift on hover */
+.card,
+.ant-card {
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+}
+.card:hover,
+.ant-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(2,6,23,0.6);
+}
+
+/* Subtle text animations */
+.fade-in{animation: fadeIn .6s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Notification badge */
+.badge{background:var(--accent-1);color:var(--text);border-radius:999px;padding:4px 8px;font-weight:700;font-size:12px}
+
+/* Table styles */
+.ant-table-thead > tr > th{background:transparent;color:var(--muted);border-bottom:1px solid rgba(255,255,255,0.04)}
+.ant-table-tbody > tr > td{background:transparent;border-bottom:1px dashed rgba(255,255,255,0.02);color:var(--text)}
+
+/* Small helpers */
+.center{display:flex;align-items:center;justify-content:center}
+
+/* Toasts / message overrides */
+.ant-message-notice{background:rgba(10,12,20,0.85);color:var(--text)}
+
+/* Make links smoother */
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Form titles and small helpers */
+.form-title{font-size:1.4rem;margin-bottom:10px;color:var(--text);font-weight:700}
+.text-center{text-align:center}
+.small-link{font-size:0.9rem;color:var(--muted);display:inline-block;margin-top:8px}
+.m-2{margin:8px 0;display:inline-block}
