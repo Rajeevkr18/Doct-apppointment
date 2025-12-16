@@ -1,26 +1,28 @@
 # 🏥 Doctor Appointment System
 
-A full-stack **Doctor Appointment System** built using the **MERN stack**, designed to simplify patient–doctor interactions, appointment scheduling, and healthcare record management. The project is **Dockerized** and enhanced with **Ansible automation** for consistent, scalable deployment.
+A full-stack **Doctor Appointment System** built using the **MERN stack**, designed to streamline patient–doctor interactions, appointment scheduling, and healthcare record management.  
+The application is **Dockerized** and deployed using **Ansible automation**, enabling consistent, repeatable, and scalable deployments.
 
 ---
 
 ## 🔹 Overview
 
-This application enables patients to book and manage appointments with doctors, while providing doctors and administrators with tools to manage schedules, prescriptions, documents, and analytics. It follows a clean REST architecture and supports modern DevOps practices.
+This system allows patients to book and manage appointments, doctors to manage schedules and prescriptions, and administrators to oversee platform operations.  
+It follows a modular REST architecture and integrates DevOps best practices through containerization and infrastructure automation.
 
 ---
 
 ## 🚀 Key Features
 
-- Secure authentication for Patients, Doctors, and Admin
+- Role-based authentication (Patient, Doctor, Admin)
 - Appointment booking, rescheduling, and management
 - Doctor profile and availability management
 - Prescription and medical document handling
 - Health records and analytics APIs
-- RESTful backend with role-based access
-- Responsive and user-friendly frontend
-- Dockerized services for consistent environments
-- Automated deployment using Ansible
+- Secure RESTful backend using Express
+- Responsive React frontend
+- Dockerized application services
+- Fully automated deployment using Ansible
 
 ---
 
@@ -30,11 +32,12 @@ This application enables patients to book and manage appointments with doctors, 
 **Backend:** Node.js, Express.js, MongoDB, Mongoose  
 **DevOps & Tools:** Docker, Docker Compose, Ansible, Git, GitHub, Postman
 
+ 
 ---
 
-## ⚙️ Environment Setup
+## ⚙️ Environment Configuration
 
-Create a `.env` file in the backend or root directory:
+Create a `.env` file in the project root:
 
 ```env
 PORT=8080
@@ -44,7 +47,7 @@ NODE_ENV=development
 
 ---
 
-## ▶️ Run Locally
+## ▶️ Run Locally (Development)
 
 ```bash
 git clone https://github.com/Rajeevkr18/Doct-apppointment.git
@@ -54,24 +57,26 @@ cd client && npm install
 npm run dev
 ```
 
-Backend runs on **[http://localhost:8080](http://localhost:8080)**
-Frontend runs on **[http://localhost:3000](http://localhost:3000)**
+* Backend: [http://localhost:8080](http://localhost:8080)
+* Frontend: [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🐳 Run with Docker
+## 🤖 Deployment with Ansible (Recommended)
 
-```bash
-docker-compose up --build
-```
+The complete deployment is automated using **Ansible**.
+Manual Docker commands are **not required**.
 
-This starts the backend, frontend, and MongoDB services in containers.
+### 🔧 Prerequisites
+
+* Ansible installed on the local machine
+* SSH access to the target server
 
 ---
 
-## 🤖 Ansible Automation
+### 🚀 Automated Deployment
 
-The project includes Ansible playbooks to automate server setup and application deployment.
+From the project root:
 
 ```bash
 cd ansible
@@ -81,12 +86,37 @@ ansible-playbook playbooks/deploy.yml
 
 ---
 
+### 🌐 Application Access
+
+After deployment:
+
+* Backend: `http://<server-ip>:8080`
+* Frontend: `http://<server-ip>:3000`
+
+---
+
+### 🔁 Redeployment
+
+After code changes, redeploy using:
+
+```bash
+ansible-playbook playbooks/deploy.yml
+```
+
+---
+
+## 🐳 Docker (Managed by Ansible)
+
+Docker and Docker Compose are used internally, but all container operations are orchestrated by Ansible to ensure reliability and repeatability.
+
+---
+
 ## 📌 Use Cases
 
-* Hospital and clinic appointment management
+* Hospital and clinic appointment systems
 * Telemedicine platforms
-* Healthcare management systems
-* Full-stack + DevOps learning project
+* Healthcare management solutions
+* MERN + DevOps portfolio project
 
 ---
 
@@ -100,7 +130,10 @@ LinkedIn: [https://www.linkedin.com/in/rajeevk18/](https://www.linkedin.com/in/r
 
 ## ⭐ Highlights
 
-* Developed a scalable MERN application with clean API design
+* Built a scalable MERN application with clean REST APIs
 * Implemented role-based access and secure data handling
 * Containerized the application using Docker
-* Automated deployment and configuration using Ansible
+* Automated end-to-end deployment using Ansible
+
+```
+
