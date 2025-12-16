@@ -1,11 +1,3 @@
-Got it 👍
-Here is a **SINGLE-PAGE, COMPLETE, CLEAN, PROFESSIONAL README** — no extra sections, no scrolling chaos, **perfect for GitHub + recruiters**.
-
-You can **copy-paste this directly** into `README.md`.
-
----
-
-```md
 # 🏥 Doctor Appointment System
 
 A full-stack **Doctor Appointment System** built using the **MERN stack**, designed to simplify patient–doctor interactions, appointment scheduling, and healthcare record management. The project is **Dockerized** and enhanced with **Ansible automation** for consistent, scalable deployment.
@@ -130,6 +122,3 @@ LinkedIn: [https://www.linkedin.com/in/rajeevk18/](https://www.linkedin.com/in/r
 * Implemented role-based access and secure data handling
 * Containerized the application using Docker
 * Automated deployment and configuration using Ansible
-
-```
-
