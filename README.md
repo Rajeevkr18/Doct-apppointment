@@ -80,8 +80,8 @@ From the project root:
 
 ```bash
 cd ansible
-ansible-playbook playbooks/setup.yml
-ansible-playbook playbooks/deploy.yml
+ansible-playbook playbooks/tasks/deploy_containers.yml
+ansible-playbook playbooks/tasks/install_docker.yml
 ```
 
 ---
@@ -100,7 +100,7 @@ After deployment:
 After code changes, redeploy using:
 
 ```bash
-ansible-playbook playbooks/deploy.yml
+ansible-playbook playbooks/deploybook.yml
 ```
 
 ---
